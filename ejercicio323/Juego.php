@@ -1,5 +1,5 @@
 <?php
-include "./../ejercicio320/Soporte.php";
+include_once "./../ejercicio320/Soporte.php";
 class Juego extends Soporte{
     public string $consola;
     private int $minNumJugadores;

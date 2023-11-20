@@ -1,5 +1,5 @@
 <?php
-include "./../ejercicio320/Soporte.php";
+include_once "./../ejercicio320/Soporte.php";
 class Dvd extends Soporte {
     public string $idiomas;
     private string $formatPantalla;
@@ -17,7 +17,7 @@ class Dvd extends Soporte {
             <span>$this->titulo</span><br>
             <span>$precio € (IVA no incluido)</span><br>
             <span>Idiomas: $this->idiomas</span><br>
-            <span>Formato Pantalla: $this->formatPantalla</span>
+            <span>Formato Pantalla: $this->formatPantalla</span><br>
         ";
     }
 }

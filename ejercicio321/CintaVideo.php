@@ -1,5 +1,5 @@
 <?php
-include "./../ejercicio320/Soporte.php";
+include_once "./../ejercicio320/Soporte.php";
 class CintaVideo extends Soporte{
     private float $duracion;
 
@@ -12,9 +12,9 @@ class CintaVideo extends Soporte{
         $precio = parent::getPrecio();
         echo "
         <span>Película en VHS:</span><br>
-        <span>$this->titulo</span>
-        <span>$precio € (IVA no incluido)</span>
-        <span>Duración: $this->duracion minutos</span>
+        <span>$this->titulo</span><br>
+        <span>$precio € (IVA no incluido)</span><br>
+        <span>Duración: $this->duracion minutos</span><br>
         ";
     }
 }

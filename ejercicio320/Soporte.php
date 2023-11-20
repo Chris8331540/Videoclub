@@ -3,7 +3,7 @@ class Soporte{
     public string $titulo;
     protected int $numero;
     private float $precio;
-    private static $IVA = 21;
+    private static int $IVA = 21;
 
     public function __construct(string $titulo, int $numero, float $precio){
         $this->titulo = $titulo;

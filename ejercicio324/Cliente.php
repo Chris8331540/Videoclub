@@ -1,14 +1,15 @@
 <?php
+include_once "../ejercicio320/Soporte.php";
 class Cliente{
     public string $nombre;
     private int $numero;
     private $soportesAlquilados = array();
-    private int $numSoportesAlquilados;
+    private int $numSoportesAlquilados=0;
     private int $maxAlquilerConcurrente;
 
     public function __construct(string $nombre, int $numero, int $maxAlquilerConcurrente=3) {
         $this->nombre = $nombre;
-        $this->numero = numero;
+        $this->numero = $numero;
         $this->maxAlquilerConcurrente = $maxAlquilerConcurrente;
     }
 
@@ -42,16 +43,39 @@ class Cliente{
     }
 
     public function alquilar(Soporte $s):bool{
-        if($this->tieneAlquilado($s) and $this->numSoportesAlquilados<$this->maxAlquilerConcurrente){
-            //si está alquilado y no supera el numero máximo, realizamos la operacion.
+        $result = false;
+
+        if($this->tieneAlquilado($s)){
+            echo "<span>El cliente ya tiene alquilado el soporte <b>$s->titulo</b></span><br>";
+        }else if($this->numSoportesAlquilados>=$this->maxAlquilerConcurrente){
+            //si ya ha alcanzado la cantidad máxima de items alquilados, se deniega
+            echo "<span>Este cliente tiene $this->maxAlquilerConcurrente elementos alquilados. No puede alquilar más en este videoclub hasta que no devuelva algo.</span><br>";
+        }else{
+            //si no lo tiene alquilado, lo alquilamos.
             $this->numSoportesAlquilados++;
             array_push($this->soportesAlquilados, $s);
-            echo "<span>Se ha alquilado.</span><br>";
-            return true;
-        }
-        //en caso contrario, no realizamos nada, y devolvemos false;
-        echo "<span>No se ha podido alquilar.</span><br>";
-        return false;
+            echo "<span>Alquilado soporte a: <b>$this->nombre</b></span><br>";
+            $result = true;
 
+        }
+        return $result;
+    }
+
+    public function devolver (int $numSoporte):bool{
+        foreach($this->soportesAlquilados as $s){
+            if($s->getNumero() == $numSoporte){
+                echo "<span>Se ha devuelto el soporte.</span><br>";
+                return true;
+            }
+        }
+        echo "<span>No se ha podido encontrar el soporte en los alquileres de este cliente</span><br>";
+        return false;
+    }
+
+    public function listaAlquileres():void{
+        echo "<span>El cliente tiene $this->numSoportesAlquilados soportes alquilados</span><br>";
+        foreach($this->soportesAlquilados as $s){
+            $s->muestraResumen();
+        }
     }
 }
