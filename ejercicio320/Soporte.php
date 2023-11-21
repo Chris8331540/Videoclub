@@ -1,9 +1,10 @@
 <?php
+include_once "../ejercicio329/Resumible.php";
 /*328.- Al transformar la clase en abstracta conseguimos que no sea posible
 instanciar la clase, sino que deba usarse clases que hereden de ella, además
 de que con métodos abstractos obligamos su uso en las clases herederas
 */
-abstract class Soporte{
+abstract class Soporte implements Resumible{
     public string $titulo;
     protected int $numero;
     private float $precio;
