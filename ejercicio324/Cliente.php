@@ -42,8 +42,7 @@ class Cliente{
         return false;
     }
 
-    public function alquilar(Soporte $s):bool{
-        $result = false;
+    public function alquilar(Soporte $s){
 
         if($this->tieneAlquilado($s)){
             echo "<span>El cliente ya tiene alquilado el soporte <b>$s->titulo</b></span><br>";
@@ -55,10 +54,8 @@ class Cliente{
             $this->numSoportesAlquilados++;
             array_push($this->soportesAlquilados, $s);
             echo "<span>Alquilado soporte a: <b>$this->nombre</b></span><br>";
-            $result = true;
-
         }
-        return $result;
+        return $this;
     }
 
     public function devolver (int $numSoporte):bool{

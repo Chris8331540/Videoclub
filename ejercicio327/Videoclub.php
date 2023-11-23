@@ -80,5 +80,6 @@ Class Videoclub{
                 }
             }
         }
+        return $this;
     }
 }
