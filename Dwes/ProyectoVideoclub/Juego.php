@@ -1,5 +1,6 @@
-<?php
-include_once "./../ejercicio320/Soporte.php";
+<?php namespace juego;
+include_once "Soporte.php";
+use soporte\Soporte;
 class Juego extends Soporte{
     public string $consola;
     private int $minNumJugadores;

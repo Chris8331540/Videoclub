@@ -1,9 +1,15 @@
-<?php
-include_once "../ejercicio320/Soporte.php";
-include_once "../ejercicio321/CintaVideo.php";
-include_once "../ejercicio322/Dvd.php";
-include_once "../ejercicio323/Juego.php";
-include_once "../ejercicio324/Cliente.php";
+<?php namespace videoClub;
+
+include_once "Soporte.php";
+include_once "CintaVideo.php";
+include_once "Dvd.php";
+include_once "Juego.php";
+include_once "Cliente.php";
+use soporte\Soporte;
+use cintaVideo\CintaVideo;
+use dvd\Dvd;
+use juego\Juego;
+use cliente\Cliente;
 Class Videoclub{
     private string $nombre;
     private $productos = array();

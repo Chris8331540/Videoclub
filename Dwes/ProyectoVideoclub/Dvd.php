@@ -1,5 +1,6 @@
-<?php
-include_once "./../ejercicio320/Soporte.php";
+<?php namespace dvd;
+include_once "Soporte.php";
+use soporte\Soporte;
 class Dvd extends Soporte {
     public string $idiomas;
     private string $formatPantalla;

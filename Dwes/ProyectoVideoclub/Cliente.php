@@ -1,5 +1,6 @@
-<?php
-include_once "../ejercicio320/Soporte.php";
+<?php namespace cliente;
+include_once "Soporte.php";
+use soporte\Soporte;
 class Cliente{
     public string $nombre;
     private int $numero;

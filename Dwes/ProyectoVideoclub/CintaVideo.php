@@ -1,5 +1,6 @@
-<?php
-include_once "./../ejercicio320/Soporte.php";
+<?php namespace cintaVideo;
+include_once "Soporte.php";
+use soporte\Soporte;
 class CintaVideo extends Soporte{
     private float $duracion;
 
