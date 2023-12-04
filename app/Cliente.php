@@ -1,6 +1,5 @@
-<?php namespace cliente;
+<?php namespace Dwes\ProyectoVideoClub;
 include_once "Soporte.php";
-use soporte\Soporte;
 class Cliente{
     public string $nombre;
     private int $numero;

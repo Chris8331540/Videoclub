@@ -1,6 +1,5 @@
-<?php namespace juego;
+<?php namespace Dwes\ProyectoVideoClub;
 include_once "Soporte.php";
-use soporte\Soporte;
 class Juego extends Soporte{
     public string $consola;
     private int $minNumJugadores;

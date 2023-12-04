@@ -1,6 +1,5 @@
-<?php namespace cintaVideo;
+<?php namespace Dwes\ProyectoVideoClub;
 include_once "Soporte.php";
-use soporte\Soporte;
 class CintaVideo extends Soporte{
     private float $duracion;
 

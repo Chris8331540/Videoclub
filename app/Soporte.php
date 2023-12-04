@@ -1,5 +1,4 @@
-<?php namespace soporte;
-use resumible\Resumible;
+<?php namespace Dwes\ProyectoVideoClub;
 include_once "Resumible.php";
 /*328.- Al transformar la clase en abstracta conseguimos que no sea posible
 instanciar la clase, sino que deba usarse clases que hereden de ella, además

@@ -1,13 +1,13 @@
 <?php
-include "./Dwes/ProyectoVideoclub/Dvd.php";
-include "./Dwes/ProyectoVideoclub/Juego.php";
-include "./Dwes/ProyectoVideoclub/Cliente.php";
-include "./Dwes/ProyectoVideoclub/CintaVideo.php";
-use cintaVideo\CintaVideo;
-use cliente\Cliente;
-use dvd\Dvd;
-use juego\Juego;
+include_once "../app/Cliente.php";
+include_once "../app/Juego.php";
+include_once "../app/Dvd.php";
+include_once "../app/CintaVideo.php";
 
+use Dwes\ProyectoVideoClub\Cliente;
+use Dwes\ProyectoVideoClub\Juego;
+use Dwes\ProyectoVideoClub\Dvd;
+use Dwes\ProyectoVideoClub\CintaVideo;
 
 //instanciamos un par de objetos cliente
 $cliente1 = new Cliente("Bruce Wayne", 23);

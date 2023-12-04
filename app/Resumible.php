@@ -1,4 +1,4 @@
-<?php namespace resumible;
+<?php namespace Dwes\ProyectoVideoClub;
 /*
  * ejercicio 329.- Hace falta que lo "implemente" el padre y en este caso no sería
  * necesario que los hijos tambien lo implementasen, ya que se usaría el del padre.

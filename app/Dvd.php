@@ -1,6 +1,5 @@
-<?php namespace dvd;
+<?php namespace Dwes\ProyectoVideoClub;
 include_once "Soporte.php";
-use soporte\Soporte;
 class Dvd extends Soporte {
     public string $idiomas;
     private string $formatPantalla;
