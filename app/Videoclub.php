@@ -13,10 +13,26 @@ Class Videoclub{
     private $socios = array();
     private int $numSocios=0;
 
+    private int $numProductosAlquilados;
+    private int $numTotalAlquileres;
+
     public function __construct(string $nombre){
         $this->nombre = $nombre;
     }
+    public function getNumProductosAlquilados(){
+        return $this->numProductosAlquilados;
+    }
 
+    public function setNumProductosAlquilados(int $valor){
+        $this->numProductosAlquilados = $valor;
+    }
+
+    public function getNumTotalAlquileres(){
+        return $this->numTotalAlquileres;
+    }
+    public function setNumTotalAlquilere($valor){
+        $this->numTotalAlquileres = $valor;
+    }
     private function incluirProducto(Soporte $producto):void{
             array_push($this->productos, $producto);
             echo "<span>Incuido soporte $this->numProductos</span><br>";

@@ -6,6 +6,8 @@ de que con métodos abstractos obligamos su uso en las clases herederas
 */
 abstract class Soporte implements Resumible{
     public string $titulo;
+
+    public bool $alquilado = false;
     protected int $numero;
     private float $precio;
     private static int $IVA = 21;
@@ -32,6 +34,10 @@ abstract class Soporte implements Resumible{
      */
     public function getNumero(): int {
         return $this->numero;
+    }
+
+    public function setAlquilado(bool $valor){
+        $this->alquilado = $valor;
     }
 
     public function muestraResumen():void{
