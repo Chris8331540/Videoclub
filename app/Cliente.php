@@ -29,7 +29,17 @@ class Cliente{
     public function getNumSoportesAlquilados(){
         return $this->numSoportesAlquilados;
     }
+    public function getAlquileres(){
+        return $this->soportesAlquilados;
+    }
 
+    public function getUsuario(){
+        return $this->usuario;
+    }
+
+    public function getPassword(){
+        return $this->password;
+    }
     public function muestraResumen(){
         $cantidad = count($this->soportesAlquilados);
         echo "

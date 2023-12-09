@@ -14,7 +14,7 @@ Class Videoclub{
     private int $numSocios=0;
 
     private $numProductosAlquilados = array();
-    private int $numTotalAlquileres;
+    private int $numTotalAlquileres=0;
 
     public function __construct(string $nombre){
         $this->nombre = $nombre;
