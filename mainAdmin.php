@@ -16,8 +16,8 @@ $vc->incluirDvd("El Imperio Contraataca", 3, "es,en","16:9");
 $vc->incluirCintaVideo("Los cazafantasmas", 3.5, 107);
 $vc->incluirCintaVideo("El nombre de la Rosa", 1.5, 140);
 
-$vc->incluirSocio("Amancio Ortega");
-$vc->incluirSocio("Pablo Picasso", 2);
+$vc->incluirSocio("Amancio Ortega", "usuario1", "password1");
+$vc->incluirSocio("Pablo Picasso", "usuario2", "password2", 2);
 
 
 session_start();

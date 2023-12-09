@@ -61,8 +61,8 @@ Class Videoclub{
         $this->incluirProducto($juego);
     }
 
-    public function incluirSocio(string $nombre, int $maxAlquileresConcurrentes = 3){
-        $cliente = new Cliente($nombre,$this->numSocios, $maxAlquileresConcurrentes);
+    public function incluirSocio(string $nombre, string $usuario, string $password, int $maxAlquileresConcurrentes = 3){
+        $cliente = new Cliente($nombre,$this->numSocios, $usuario, $password, $maxAlquileresConcurrentes);
         array_push($this->socios, $cliente);
         $this->numSocios++;
     }

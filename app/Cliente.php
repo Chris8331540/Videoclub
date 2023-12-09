@@ -7,10 +7,15 @@ class Cliente{
     private int $numSoportesAlquilados=0;
     private int $maxAlquilerConcurrente;
 
-    public function __construct(string $nombre, int $numero, int $maxAlquilerConcurrente=3) {
+    private string $usuario;
+    private string $password;
+
+    public function __construct(string $nombre, int $numero, $usuario, $password, int $maxAlquilerConcurrente=3) {
         $this->nombre = $nombre;
         $this->numero = $numero;
         $this->maxAlquilerConcurrente = $maxAlquilerConcurrente;
+        $this->usuario = $usuario;
+        $this->password = $password;
     }
 
     public function getNumero(){
