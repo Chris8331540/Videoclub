@@ -8,7 +8,7 @@ include_once "Cliente.php";
 
 Class Videoclub{
     private string $nombre;
-    private $productos = array();
+    private array $productos;
     private int $numProductos=0;
     private $socios = array();
     private int $numSocios=0;
@@ -99,5 +99,29 @@ Class Videoclub{
             }
         }
         return $this;
+    }
+
+    public function alquilarSocioProductos(int $numSocio, array $numerosProductos){
+        //comprobamos todos los numeros de producto para ver si estan disponibles
+        $continuar = true;
+        foreach($numerosProductos as $numeroProducto){
+            if($continuar){
+                $continuar = $this->comprobarNumero($numeroProducto);
+            }
+        }
+        if($continuar){//si continuar sigue estando en true, entonces todos los productos se encuentran disponibles
+            foreach($numerosProductos as $numeroProducto){
+                $this->alquilarSocioProducto($numSocio, $numeroProducto);
+            }
+        }
+
+    }
+    private function comprobarNumero($numeroProducto):bool{
+        foreach($this->productos as $producto){
+            if($numeroProducto==$producto->getNumero()){
+                return true;
+            }
+        }
+        return false;
     }
 }
