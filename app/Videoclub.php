@@ -13,7 +13,7 @@ Class Videoclub{
     private $socios = array();
     private int $numSocios=0;
 
-    private int $numProductosAlquilados;
+    private array $numProductosAlquilados;
     private int $numTotalAlquileres;
 
     public function __construct(string $nombre){
@@ -23,7 +23,7 @@ Class Videoclub{
         return $this->numProductosAlquilados;
     }
 
-    public function setNumProductosAlquilados(int $valor){
+    public function setNumProductosAlquilados(array $valor){
         $this->numProductosAlquilados = $valor;
     }
 
@@ -89,6 +89,11 @@ Class Videoclub{
                     if($producto->getNumero() == $numeroSoporte){
                         //comprobamos cual producto coincide con el número de soporte
                         $alquilado = $socio->alquilar($producto);
+                        //ponemos el producto como alquilado y lo incluimos en la lista, aumentamos el contador
+                        $producto->setAlquilado(true);
+                        array_push($this->numProductosAlquilados, $producto->getNumero());
+                        $this->numTotalAlquileres++;
+
                         if($alquilado){
                             //si se ha alquilado, se muestra el resumen del soporte
                             $producto->muestraResumen();
@@ -114,7 +119,33 @@ Class Videoclub{
                 $this->alquilarSocioProducto($numSocio, $numeroProducto);
             }
         }
+    }
 
+    public function devolverSocioProducto(int $numSocio, int $numeroProducto){
+        foreach($this->socios as $socio){
+            if($socio->getNumero()==$numSocio){
+                for($i = 0; $i<count($this->productos); $i++){
+                    if($this->productos[$i]->getNumero()==$numeroProducto){
+                        $devuelto = $socio->devolver($numeroProducto);
+                        if($devuelto){
+                            //en caso de que se haya completado la devolucion
+                            //debemos modificar los arrays y cambiar la propiedad alquilado del objeto
+                            $this->productos[$i]->setAlquilado(false);
+                            unset($this->numProductosAlquilados[array_search($numeroProducto, $this->numProductosAlquilados)]);
+                            $this->numProductosAlquilados = array_values($this->numProductosAlquilados);
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    public function devolverSocioProductos(int $numSocio, array $numerosProductos){
+        foreach($numerosProductos as $numeroProducto){
+            $this->devolverSocioProducto($numSocio, $numeroProducto);
+        }
     }
     private function comprobarNumero($numeroProducto):bool{
         foreach($this->productos as $producto){
