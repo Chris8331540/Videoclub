@@ -8,12 +8,12 @@ include_once "Cliente.php";
 
 Class Videoclub{
     private string $nombre;
-    private array $productos;
+    private $productos = array();
     private int $numProductos=0;
     private $socios = array();
     private int $numSocios=0;
 
-    private array $numProductosAlquilados;
+    private $numProductosAlquilados = array();
     private int $numTotalAlquileres;
 
     public function __construct(string $nombre){
@@ -33,9 +33,15 @@ Class Videoclub{
     public function setNumTotalAlquilere($valor){
         $this->numTotalAlquileres = $valor;
     }
+    public function getProductos(){
+        return $this->productos;
+    }
+    public function getSocios(){
+        return $this->socios;
+    }
     private function incluirProducto(Soporte $producto):void{
             array_push($this->productos, $producto);
-            echo "<span>Incuido soporte $this->numProductos</span><br>";
+            //echo "<span>Incuido soporte $this->numProductos</span><br>";
             $this->numProductos++;
     }
 

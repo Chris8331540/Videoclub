@@ -18,6 +18,10 @@ if(array_key_exists($usuario, $users)){
 }
 
 if($validado){
+    if($usuario == "admin"){
+        header("Location: mainAdmin.php");
+        die();
+    }
     echo "<p>Hola $usuario</p>";
     echo "<a href='salir.php'>Cerrar sesión</a>";
 }else{
