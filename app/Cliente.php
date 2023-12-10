@@ -37,8 +37,16 @@ class Cliente{
         return $this->usuario;
     }
 
+    public function setUsuario(string $valor){
+        $this->usuario = $valor;
+    }
+
     public function getPassword(){
         return $this->password;
+    }
+
+    public function setPassword(string $valor){
+        $this->password = $valor;
     }
     public function muestraResumen(){
         $cantidad = count($this->soportesAlquilados);

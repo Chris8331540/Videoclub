@@ -39,7 +39,8 @@ if($validado){
         <?php
         foreach($vc->getSocios() as $socio){
             $nombreCliente = $socio->nombre;//eliminar mensajes de creacion de cliente
-            echo"<li>$nombreCliente</li>";
+            $usuarioCliente = $socio->getUsuario();
+            echo"<li><a href='formUpdateCliente.php?usuarioToUpdate=$usuarioCliente'>$nombreCliente</a></li>";
         }
         ?>
     </ul>

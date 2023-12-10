@@ -35,6 +35,7 @@ if($validado){
         $titulo = $productoAlquilado->titulo;
         echo "<li>$titulo</li>";
     }
+    echo "<a href='formUpdateCliente.php'><button>Actualizar mis datos</button></a>"
     ?>
 </ul>
 <?php

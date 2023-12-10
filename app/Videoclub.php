@@ -39,6 +39,9 @@ Class Videoclub{
     public function getSocios(){
         return $this->socios;
     }
+    public function setSocios($valor){
+        $this->socios=$valor;
+    }
     private function incluirProducto(Soporte $producto):void{
             array_push($this->productos, $producto);
             //echo "<span>Incuido soporte $this->numProductos</span><br>";
