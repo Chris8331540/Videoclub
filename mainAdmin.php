@@ -44,4 +44,5 @@ if($validado){
         ?>
     </ul>
 <?php
+    echo "<a href='formCreateCliente.php'><button>Añadir nuevo cliente</button></a>";
 }
